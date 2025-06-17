@@ -1,0 +1,33 @@
+
+.navbar {
+  height: 80px; /* 너가 원하는 숫자로 조절 가능 */
+}
+
+/* SNS 영역 */
+#sns-links {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(swimpool.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.contact-section {
+  background-color: #031d44;
+  color: white !important;
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 100vw; /* 화면 전체 너비 */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 수평 스크롤 방지 */
+}
+
+.contact-section .text-muted {
+  color: white !important;
+}
+
+.contact-section i {
+  color: #BDEF34 !important;
+}
+
+.contact-section .border-bottom {
+  border-color: #BDEF34 !important;
+}

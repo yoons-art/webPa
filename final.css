@@ -1,0 +1,221 @@
+
+/* 기본 리셋 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+/* 배경, 폰트 설정 */
+
+/* 네비게이션 영역 */
+.nav-link:hover,
+.nav-link.active {
+    color: #00BBFA !important;
+}
+.navbar {
+  height: 80px;
+}
+
+
+body {
+  margin: 0;
+  background: white;
+  color: #031d44;
+  height: 100vh;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+header h1 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 900;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: white;
+  line-height: 1;
+}
+
+/*심장박동 부분
+/* 🧭 wave-container: 전체 파도/심장 SVG를 포함하는 박스 */
+.wave-container {
+  position: absolute;   /* 전체 레이아웃 위에 덮어씀 */
+  bottom: 0;            /* 화면 아래 고정 */
+  left: 0;
+  width: 100%;
+  height: 100px;        /* 원하는 파도 높이 */
+  z-index: 10;          /* 다른 요소 위로 */
+}
+/* 🌊 wave: 아래쪽 배경 선 (등장 애니메이션 있음) 
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 2s ease-out forwards;  /* 선 그리기 애니메이션 
+}*/
+
+/* 🫀 heartbeat: 박동선 위치 지정 */
+.heartbeat {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+
+/* ❤️ heartbeat path: 실제 선에 애니메이션 적용 */
+.heartbeat path {
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100 1000;      /* 대시 효과로 일부만 보임 */
+  stroke-dashoffset: 0;
+  animation: beat 1.5s linear infinite;  /* 무한 반복 박동 애니메이션 */
+}
+
+/* ✏️ wave 선 등장 애니메이션 */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;  /* 점점 선이 그려지는 효과 */
+  }
+}
+
+/* ✨ 심장 박동 애니메이션 (선이 왼쪽으로 이동) */
+@keyframes beat {
+  to {
+    stroke-dashoffset: -1100;  /* 전체 선을 왼쪽으로 밀어 움직이는 느낌 */
+  }
+}
+
+.dive {
+  height: 100vh; /* 전체 화면 높이 */
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(swimpool.png);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+/*접수 섹션 시작*/
+.contact-info-section {
+  background-color: #031d44; /* 또는 어두운 이미지 위에 올린다면 rgba */
+  color: white;
+}
+
+.contact-info-section .text-highlight {
+  color: #BDEF34;
+  font-weight: bold;
+    font-size: 2.4rem; /* 섹션 제목 */
+  font-weight: 800;
+}
+.contact-info-section h4 {
+  font-size: 1.8rem; /* 날짜 */
+  font-weight: 700;
+}
+
+.contact-info-section .small,
+.contact-info-section .text-secondary {
+  font-size: 0.9rem; /* 보조 설명 */
+  color: #aaa;
+}
+
+/*접수 섹션 끝*/
+
+
+/*제목 barrel sprint championship*/
+.section-title-text {
+  height: 100vh;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(dive.jpg);
+  background-size: 100% auto;
+  background-position: center center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-group {
+  text-align: center;
+  transform: rotate(-5deg); /* 🔁 전체 타이틀 살짝 기울이기 */
+}
+
+/* ✅ 1. 상단 줄 (2025 BARREL) */
+.top-line {
+  font-size: clamp(3rem, 8vw, 5rem); /* 반응형 폰트 크기 */
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.5rem;
+  color: white; /* 예: 상단 BARREL 강조 색상 */
+}
+
+.top-line .year {
+  margin-right: 1rem;
+}
+
+.top-line .brand {
+  font-weight: 600;
+}
+
+/* ✅ 2. SPRINT 중앙 강조 */
+.middle-line {
+  font-size: clamp(3rem, 8vw, 6rem); /* 반응형 폰트 크기 */
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+/* ✅ 3. CHAMPIONSHIP 하단 */
+.bottom-line {
+  font-size: clamp(2rem, 8vw, 3rem); /* 반응형 폰트 크기 */
+  font-family: 'Playfair Display', serif; /* 세련된 느낌 */
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+}
+.section-title-text {
+  position: relative;  /* ✅ 기준점으로 만들기 */
+  height: 100vh;
+  background: url(swimpool.png) center center / cover no-repeat fixed;
+}
+
+.recruit-btn-fixed {
+  position: absolute;       /* ✅ 이 섹션 기준 오른쪽 아래 */
+  bottom: 120px;
+  right: 200px;
+  z-index: 10;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  border: 2px solid #00BBFA;
+  background-color: white;
+  color: #00BBFA;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.recruit-btn-fixed:hover {
+  background-color: #00BBFA;
+  color: white;
+}
+
